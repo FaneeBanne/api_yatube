@@ -1,5 +1,6 @@
-from posts.models import Post, Group, Comment
 from rest_framework import serializers
+
+from posts.models import Post, Group, Comment
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -7,7 +8,7 @@ class PostSerializer(serializers.ModelSerializer):
         read_only=True, slug_field='username'
     )
     pub_date = serializers.DateTimeField(
-        format="%Y-%m-%dT%H:%M:%S.%fZ", read_only=True
+        format='%Y-%m-%dT%H:%M:%S.%fZ', read_only=True
     )
 
     class Meta:
